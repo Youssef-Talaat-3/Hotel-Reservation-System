@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register - Hotel Reservation System</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="logo">HRS</h1>
+    <nav class="nav"></nav>
+  </div>
+</header>
+
+<section class="container" style="max-width:400px; margin-top:40px;">
+  <h2>Create Account</h2>
+  <form id="registerForm" class="form">
+    <label>Full Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required />
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter your email" required />
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter password" required />
+
+    <button type="submit" class="btn primary" style="width:100%;">Register</button>
+  </form>
+
+  <p style="text-align:center; margin-top:10px;">Already have an account? <a href="login.html">Login</a></p>
+</section>
+
+<script src="js/register.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".nav");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (loggedInUser) {
+      // المستخدم مسجل دخول
+      nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <span style="margin-left:15px;">Welcome, ${loggedInUser.name}</span>
+        <button id="logoutBtn" class="btn small outline" style="margin-left:10px;">Logout</button>
+      `;
+
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("loggedInUser");
+        alert("You have been logged out.");
+        window.location.href = "index.html";
+      });
+
+    } else {
+      // المستخدم مش عامل تسجيل دخول
+      nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="login.html" class="btn small">Login</a>
+        <a href="register.html" class="btn small outline">Register</a>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>

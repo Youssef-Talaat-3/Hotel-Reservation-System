@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking History</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .history-container {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+
+    .history-card {
+      padding: 20px;
+      background: #fff;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .history-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .history-card p {
+      margin: 4px 0;
+    }
+
+    .delete-btn {
+      background: #d9534f;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .clear-all {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">HRS</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="history.html" class="btn outline small">History</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="history-container">
+    <h2>Your Booking History</h2>
+    <div id="historyList"></div>
+
+    <div class="clear-all">
+      <button id="clearAllBtn" class="btn outline">Clear All</button>
+    </div>
+  </section>
+
+  <script src="js/history.js"></script>
+</body>
+</html>

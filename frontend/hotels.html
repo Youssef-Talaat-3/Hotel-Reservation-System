@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Reservation System - Hotels</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">HRS</h1>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <section class="container">
+    <h2>Available Hotels</h2>
+    <div id="hotelsContainer" class="cards"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 HRS — Hotel Reservation System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/hotels.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".nav");
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (loggedInUser) {
+      // المستخدم مسجل دخول
+      nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <span style="margin-left:15px;">Welcome, ${loggedInUser.name}</span>
+        <button id="logoutBtn" class="btn small outline" style="margin-left:10px;">Logout</button>
+      `;
+
+      document.getElementById("logoutBtn").addEventListener("click", () => {
+        localStorage.removeItem("loggedInUser");
+        alert("You have been logged out.");
+        window.location.href = "index.html";
+      });
+
+    } else {
+      // المستخدم مش عامل تسجيل دخول
+      nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="login.html" class="btn small">Login</a>
+        <a href="register.html" class="btn small outline">Register</a>
+      `;
+    }
+  });
+</script>
+
+</body>
+</html>

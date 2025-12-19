@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">HRS</h1>
+      <nav class="nav"></nav>
+    </div>
+  </header>
+
+  <section class="container" style="padding:40px 0;">
+    <div class="confirmation-box" style="background:#fff; padding:30px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.05); max-width:480px; margin:auto;">
+      
+      <h2 style="color:var(--primary); margin-bottom:10px;">Booking Confirmed!</h2>
+      <p style="color:var(--muted); margin-bottom:20px;">Here are your reservation details:</p>
+
+      <div class="confirm-info" style="text-align:left;">
+        <p><strong>Hotel:</strong> <span id="confirmHotel"></span></p>
+        <p><strong>Check-in:</strong> <span id="confirmCheckIn"></span></p>
+        <p><strong>Check-out:</strong> <span id="confirmCheckOut"></span></p>
+        <p><strong>Guests:</strong> <span id="confirmGuests"></span></p>
+        <p><strong>Nights:</strong> <span id="confirmNights"></span></p>
+        <p><strong>Total Price:</strong> $<span id="confirmTotal"></span></p>
+      </div>
+
+      <br>
+      <a href="index.html" class="btn primary">Back to Home</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2025 HRS — Hotel Reservation System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ملف الجافاسكربت الجديد -->
+  <script src="js/booking-confirmation.js"></script>
+
+</body>
+</html>
